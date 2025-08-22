@@ -1,0 +1,5 @@
+#ifndef ORBSLAM_ROS_SYSTEM_H
+#define ORBSLAM_ROS_SYSTEM_H
+
+
+#endif  // ORBSLAM_ROS_SYSTEM_H
