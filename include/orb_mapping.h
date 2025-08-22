@@ -19,12 +19,26 @@ public:
     // init with ros
     bool InitROS();
 
+    void Run();
+
     void image_callback(const sensor_msgs::ImageConstPtr &imgMsg);
+
+public:
+    enum eSensor
+    {
+        MONOCULAR = 0,
+        STEREO = 1,
+        RGBD = 2,
+        IMU_MONOCULAR = 3,
+        IMU_STEREO = 4,
+        IMU_RGBD = 5,
+    };
 
 private:
     void SubAndPubToROS();
 
-    std::queue<sensor_msgs::ImageConstPtr> image_queue_;
+    std::deque<sensor_msgs::ImageConstPtr> image_queue_;
+    bool initial_camera_info_ = false;
 
 private:
     ros::Subscriber sub_image_;

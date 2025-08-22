@@ -3,10 +3,4 @@
     Created by xubobo on 2025/08/22.
 */
 
-#include "system.h"
-
-class System
-{
-public:
-
-};
+#include "ORBextractor.h"

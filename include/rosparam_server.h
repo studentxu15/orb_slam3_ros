@@ -12,11 +12,15 @@ public:
     std::string camera_image_topic_;
     std::string camera_info_topic_;
 
+    int mSensor;
+
     ParamServer()
         : nh(), private_nh("~")
     {
         private_nh.param<string>("camera_image_topic", camera_image_topic_, "/camera/color/image_raw");
         private_nh.param<string>("camera_info_topic", camera_info_topic_, "/camera/color/camera_info");
+
+        private_nh.param<int>("mSensor", mSensor, 0);
 
     }
 
